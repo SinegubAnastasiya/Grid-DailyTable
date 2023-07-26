@@ -1,0 +1,58 @@
+$base-fonts: 400 14px Noto Sans;
+$indent: 8px 12px;
+$gray-color: var(--gray-900, #3B3E45);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+%image-property {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+%d-flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    @extend %d-flex-between-center;
+
+    .logo {
+        @extend %image-property;
+        background-image: url(../assets/Logo.svg)
+    }
+
+    .searchform input {
+        padding: $indent;
+        width: 376px;
+        border-radius: 4px;
+        border: 1px solid var(--gray-400, #DCDFE3);
+        background: var(--gray-100, #FFF);
+    }
+
+    .navigation {
+        @extend %d-flex-between-center;
+        gap: 24px;
+        .settings {
+            @extend %image-property;
+            background-image: url(../assets/settings.svg);
+        }
+
+        .bell {
+            @extend %image-property;
+            background-image: url(../assets/bell.svg);
+        }
+
+        p {
+            font: $base-fonts;
+            color: $gray-color;
+        }
+    }   
+}
